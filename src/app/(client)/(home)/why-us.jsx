@@ -29,8 +29,8 @@ export default function WhyUs() {
       <div className="mt-block grid gap-base md:grid-cols-3">
         {/* Card */}
         {workings.map((item, i) => (
-          <div className="relative px-base py-block w-full border hover:border-primary rounded-md overflow-hidden group transition-all" key={i + "WorksCard"}>
-            <div className="text-center flex-center flex-col">
+          <div className="relative px-base py-block w-full border hover:border-primary hover:bg-primary rounded-md overflow-hidden group transition-all" key={i + "WorksCard"}>
+            <div className="text-center flex-center flex-col group-hover:text-primary-foreground">
               <h3 className="text-primary transition-all">{item.icon}</h3>
               <h4 className="py-base">{item.title}</h4>
               <p className="leading-6">{item.description}</p>

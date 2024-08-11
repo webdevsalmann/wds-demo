@@ -27,6 +27,12 @@ module.exports = {
         '3xl': '2.25rem'/* 36px */,
         'block': '3rem'/* 48px */,
       },
+      animation: {
+        'bounce-slow': 'bounce 3s linear infinite',
+      },
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

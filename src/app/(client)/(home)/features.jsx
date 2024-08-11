@@ -1,3 +1,4 @@
+import FadeUp from "@/components/animations/FadeUp";
 import Section from "@/components/ui/section";
 import { CigaretteOff, Map, MapPin, PackageCheck, SlidersVertical, Thermometer, Video, Zap } from "lucide-react";
 import Image from "next/image";
@@ -16,6 +17,10 @@ const featurePoints = [
     title: "Precision Navigation",
   },
   {
+    icon: <Video className="size-6 group-hover:text-primary shrink-0" />,
+    title: "Easy Reordering",
+  },
+  {
     icon: <CigaretteOff className="size-6 group-hover:text-primary shrink-0" />,
     title: "Zero Emissions",
   },
@@ -28,11 +33,6 @@ const featurePoints = [
     title: "Temperature-Controlled Compartments",
   },
   {
-    icon: <Video className="size-6 group-hover:text-primary shrink-0" />,
-    title: "Easy Reordering",
-  },
-  {
-    icon: "",
     icon: <PackageCheck className="size-6 group-hover:text-primary shrink-0" />,
     title: "Flexible Delivery Options"
   },
@@ -41,36 +41,39 @@ const featurePoints = [
 export default function Features() {
   return (
     <Section className="-mt-block">
-      <div className="relative grid gap-block md:grid-cols-2">
+      <div className="grid gap-block md:grid-cols-2">
+        <div className="">
 
-        <div className="md:sticky top-0 h-fit">
-          <div className="absolute left-0 right-0 w-1/2 aspect-square bg-primary/55 blur-[100rem] -z-10">
-          </div>
-          <Image
-            className="w-full "
-            src="/images/common/drone.png"
-            width={200}
-            height={200}
-            alt="Drone Image"
-          />
+          <FadeUp>
+            <h2><span className="text-primary">Unmatched </span>Delivery Experience</h2>
+          </FadeUp>
         </div>
+        <div>
+          <FadeUp>
+            <p>Experience the future of food delivery with our ultra-fast drones, designed to bring your meals to you in record time. Say goodbye to long waits and hello to a seamless, swift service that gets your food to your door in minutes.</p>
+          </FadeUp>
+          <FadeUp>
+            <p className="mt-base">Our advanced technology ensures that your food arrives fresh and perfectly preserved, with minimal handling and maximum precision. From real-time tracking to temperature-controlled compartments, every detail is optimized for your satisfaction.</p>
+          </FadeUp>
+        </div>
+      </div>
 
-        <div className="relative overflow-hidden">
-          <div className="">
-            <h2 className="md:text-left">Why Our Drone Delivery Service Stands Out</h2>
-          </div>
-
-          <div className="grid grid-cols-2 gap-base ">
-            {featurePoints.map((item, i) => (
-              <div className="p-base flex-center gap-base flex-col text-center rounded-md border group" key={i + "FeatureCard"}>
-                <div className="">
-                  {item.icon}
-                </div>
-                {item.title}
+      <div className="mt-block grid sm:grid-cols-2 md:grid-cols-4 gap-base">
+        {featurePoints.map((item, i) => (
+          <FadeUp
+            transition={{
+              type: "spring",
+              delay: 0.3 * i
+            }}
+            key={item.title + "FeatureCard"}>
+            <div className="p-base flex-center gap-base flex-col text-center group rounded-md border-primary border">
+              <div className="">
+                {item.icon}
               </div>
-            ))}
-          </div>
-        </div>
+              {item.title}
+            </div>
+          </FadeUp>
+        ))}
       </div>
     </Section>
   )

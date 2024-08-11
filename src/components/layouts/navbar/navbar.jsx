@@ -51,9 +51,9 @@ export default function Navbar() {
             "hidden md:flex justify-self-end",
             buttonVariants({ size: 'sm' }),
           )}
-          href="/#check-eligibility"
+          href="/#request-demo"
         >
-          Check Eligibility
+          Free Demo
         </Link>
       </nav>
     </div>
