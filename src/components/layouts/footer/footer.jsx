@@ -7,17 +7,52 @@ export default function Footer() {
 
   return (
     <footer>
-      <Section sectionClassName="bg-primary text-primary-foreground">
-        <div className="grid gap-base md:grid-cols-2">
+      <Section sectionClassName="bg-secondary">
+        <div className="grid gap-3xl sm:grid-cols-2 md:grid-cols-3">
           <div className="">
-            <Ilogo className="size-10" />
-            <div className="mt-base text-primary-foreground/70">&copy; {currentYear} Company</div>
+            <Ilogo className="size-10 mb-xs" />
+            <p className="sm:w-3/4">
+              Experience the future of food delivery with our state-of-the-art drone service.
+            </p>
           </div>
 
-          <div className="flex flex-col">
-            <Link className="hover:underline w-fit" href="/" >Privacy Policy</Link>
-            <Link className="hover:underline w-fit" href="/" >Terms of condition</Link>
-            <Link className="hover:underline w-fit" href="/" >Cookie Condition</Link>
+          {/* Links */}
+          <div className="">
+            <div className="mb-xs font-bold">Links</div>
+            <ul>
+              <li>
+                <Link className="hover:underline w-fit text-link" href="/#features" >Features</Link>
+              </li>
+              <li>
+                <Link className="hover:underline w-fit text-link" href="/#about" >About</Link>
+              </li>
+              <li>
+                <Link className="hover:underline w-fit text-link" href="/#working" >Working</Link>
+              </li>
+              <li>
+                <Link className="hover:underline w-fit text-link" href="/#services" >Services</Link>
+              </li>
+              <li>
+                <Link className="hover:underline w-fit text-link" href="/#request-demo" >Request Demo</Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div className="">
+            <div className="mb-base font-bold">Legal</div>
+            <ul>
+              <li>
+                <Link className="hover:underline w-fit text-link" href="/" >Privacy Policy</Link>
+              </li>
+              <li>
+                <Link className="hover:underline w-fit text-link" href="/" >Terms of condition</Link>
+              </li>
+              <li>
+                <Link className="hover:underline w-fit text-link" href="/" >Cookie Condition</Link>
+              </li>
+            </ul>
+            <div className="mt-base">&copy; {currentYear} Company</div>
           </div>
         </div>
       </Section>

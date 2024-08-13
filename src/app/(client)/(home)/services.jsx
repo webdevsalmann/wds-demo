@@ -23,7 +23,10 @@ const services = [
 
 export default function Services() {
     return (
-        <Section>
+        <Section
+            sectionClassName="bg-gradient-to-b from-primary/10 to-transparent"
+             id="services"
+        >
 
             <FadeUp>
                 <h2><span className="text-primary">Services</span> We Provide</h2>

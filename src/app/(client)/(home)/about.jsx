@@ -1,10 +1,12 @@
 import FadeLeft from "@/components/animations/FadeLeft";
 import FadeUp from "@/components/animations/FadeUp";
 import ZoomIn from "@/components/animations/ZoomIn";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import Section from "@/components/ui/section";
+import { cn } from "@/lib/utils";
 import { CheckCheck } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const points = [
     "On-Time Delivery",
@@ -14,7 +16,9 @@ const points = [
 
 export default function About() {
     return (
-        <Section className="grid gap-block md:grid-cols-2">
+        <Section
+        sectionClassName="bg-gradient-to-t from-primary/10 to-transparent"
+         className="grid gap-block md:grid-cols-2" id="about">
             <div className="grid gap-base grid-cols-2">
                 {[1, 2, 3, 4].map((item,i) => (
                     <FadeUp
@@ -63,7 +67,7 @@ export default function About() {
                         ))}
                     </div>
                     <ZoomIn>
-                        <Button className="mt-lg">Request A Demo</Button>
+                        <Link className={cn(buttonVariants(),"mt-lg")} href="/#request-demo">Request A Demo</Link>
                     </ZoomIn>
                 </div>
             </div>

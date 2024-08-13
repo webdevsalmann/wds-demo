@@ -1,4 +1,6 @@
 "use client"
+import FadeUp from "@/components/animations/FadeUp";
+import TypeAnimation from "@/components/animations/type-animation";
 import WavyText from "@/components/animations/WavyText";
 import ZoomIn from "@/components/animations/ZoomIn";
 import Section from "@/components/ui/section";
@@ -7,12 +9,16 @@ export default function Hero() {
   return (
     <Section>
       <div className="relative mx-auto w-full md:w-2/3 md:text-center z-0">
-        <ZoomIn>
+        <FadeUp>
           <h1>Fresh <span className="text-primary">Food Delivered by Drone</span> in Minutes!</ h1>
-        </ZoomIn>
+        </FadeUp>
 
         <p className="my-base text-foreground text-lg">
-          <WavyText text="Experience the future of food delivery with our state-of-the-art drone service."/>
+          <TypeAnimation
+            text="Experience the future of food delivery with our state-of-the-art drone service."
+          />
+
+          {/* <WavyText text="Experience the future of food delivery with our state-of-the-art drone service." /> */}
         </p>
 
         <div className="absolute left-0 right-0 -top-20 flex-center -z-10">
@@ -22,8 +28,8 @@ export default function Hero() {
 
 
       <div className="mt-block relative aspect-video bg-[url('/images/common/hero.png')] bg-cover bg-center rounded-xl overflow-hidden z-10">
-        <video className="size-full" autoPlay loop controls >
-          <source src="/videos/hero.mp4" type="video/mp4" />
+        <video className="size-full" autoPlay loop controls muted >
+          <source src="/videos/hero.mp4" type="video/mp4"/>
         </video>
       </div>
     </Section>

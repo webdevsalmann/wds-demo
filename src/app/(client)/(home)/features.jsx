@@ -40,7 +40,7 @@ const featurePoints = [
 
 export default function Features() {
   return (
-    <Section className="md:-mt-block">
+    <Section sectionClassName="md:-mt-block bg-[url('/images/bg/circle-left.svg')] md:bg-[url('/images/bg/circle-left-md.svg')] bg-no-repeat bg-center bg-cover" id="features">
       <div className="grid md:gap-block md:grid-cols-2">
         <div>
           <FadeUp>
@@ -65,7 +65,7 @@ export default function Features() {
               delay: 0.3 * i
             }}
             key={item.title + "FeatureCard"}>
-            <div className="p-base flex-center gap-base flex-col text-center group rounded-md border-primary border">
+            <div className="p-base bg-background flex-center gap-base flex-col text-center group rounded-md border-primary border">
               <div className="">
                 {item.icon}
               </div>
