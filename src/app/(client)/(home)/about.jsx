@@ -16,34 +16,22 @@ export default function About() {
     return (
         <Section className="grid gap-block md:grid-cols-2">
             <div className="grid gap-base grid-cols-2">
-                <Image
-                    className="w-full rounded object-center object-cover aspect-square"
-                    src="/images/drones/1.jpg"
-                    height={200}
-                    width={200}
-                    alt="Drone Image"
-                />
-                <Image
-                    className="w-full rounded object-center object-cover aspect-square"
-                    src="/images/drones/2.jpg"
-                    height={200}
-                    width={200}
-                    alt="Drone Image"
-                />
-                <Image
-                    className="w-full rounded object-center object-cover aspect-square"
-                    src="/images/drones/3.jpg"
-                    height={200}
-                    width={200}
-                    alt="Drone Image"
-                />
-                <Image
-                    className="w-full rounded object-center object-cover aspect-square"
-                    src="/images/drones/4.jpg"
-                    height={200}
-                    width={200}
-                    alt="Drone Image"
-                />
+                {[1, 2, 3, 4].map((item,i) => (
+                    <FadeUp
+                        transition={{
+                            type: "spring",
+                            delay: 0.3 * i
+                        }}
+                        key={item + "About Images"}>
+                        <Image
+                            className="w-full rounded object-center object-cover aspect-square"
+                            src={`/images/drones/${item}.jpg`}
+                            height={200}
+                            width={200}
+                            alt="Drone Image"
+                        />
+                    </FadeUp>
+                ))}
             </div>
 
             <div className="relative">

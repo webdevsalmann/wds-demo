@@ -4,7 +4,7 @@ import { motion, Variants, HTMLMotionProps } from "framer-motion";
 const WavyText = ({
   text,
   delay = 0,
-  duration = 0.02,
+  duration = 0.05,
   replay,
   ...props
 }) => {

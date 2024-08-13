@@ -14,9 +14,9 @@ export default function Eligibility() {
 
       <div className="grid md:grid-cols-2 gap-block">
 
-        <div className="mx-auto md:w-3/5">
+        <div className="hidden md:block mx-auto md:w-3/5">
           <Image
-            className="w-full rounded object-center object-contain aspect-square animate-bounce-slow"
+            className="w-full h-fit rounded object-center object-contain aspect-square animate-bounce-slow"
             src="/images/common/drone.png"
             height={200}
             width={200}

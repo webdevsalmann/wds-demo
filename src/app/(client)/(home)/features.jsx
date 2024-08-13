@@ -40,10 +40,9 @@ const featurePoints = [
 
 export default function Features() {
   return (
-    <Section className="-mt-block">
-      <div className="grid gap-block md:grid-cols-2">
-        <div className="">
-
+    <Section className="md:-mt-block">
+      <div className="grid md:gap-block md:grid-cols-2">
+        <div>
           <FadeUp>
             <h2><span className="text-primary">Unmatched </span>Delivery Experience</h2>
           </FadeUp>
