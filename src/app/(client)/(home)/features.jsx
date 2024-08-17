@@ -49,10 +49,10 @@ export default function Features() {
         </div>
         <div>
           <FadeUp>
-            <p>Experience the future of food delivery with our ultra-fast drones, designed to bring your meals to you in record time. Say goodbye to long waits and hello to a seamless, swift service that gets your food to your door in minutes.</p>
+            <p>Precise and Safe Delivery with <span className="text-primary">ML</span>(Machine learning)</p>
           </FadeUp>
           <FadeUp>
-            <p className="mt-base">Our advanced technology ensures that your food arrives fresh and perfectly preserved, with minimal handling and maximum precision. From real-time tracking to temperature-controlled compartments, every detail is optimized for your satisfaction.</p>
+            <p className="mt-base">We have both peripheral sensors and ML Models for precise localization and automatic object avoidance.</p>
           </FadeUp>
         </div>
       </div>

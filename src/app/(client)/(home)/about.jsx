@@ -1,7 +1,7 @@
 import FadeLeft from "@/components/animations/FadeLeft";
 import FadeUp from "@/components/animations/FadeUp";
 import ZoomIn from "@/components/animations/ZoomIn";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import Section from "@/components/ui/section";
 import { cn } from "@/lib/utils";
 import { CheckCheck } from "lucide-react";
@@ -9,9 +9,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const points = [
-    "On-Time Delivery",
+    "Fast Delivery",
     "Real Time Tracking",
     "HD Video Recording",
+    "Cost Efficient",
+    "Safe Delivery",
+    "Eco-friendly",
 ]
 
 export default function About() {

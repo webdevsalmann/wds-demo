@@ -22,7 +22,7 @@ const workings = [
 
 export default function Working() {
   return (
-    <Section sectionClassName="bg-primary/10" id="working">
+    <Section sectionClassName="bg-secondary" id="working">
       <FadeUp>
         <h2>How It <span className="text-primary"> Works</span></h2>
       </FadeUp>

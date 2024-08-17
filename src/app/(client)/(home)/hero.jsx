@@ -28,8 +28,7 @@ export default function Hero() {
 
 
       <div className="mt-block relative aspect-video bg-[url('/images/common/hero.png')] bg-cover bg-center rounded-xl overflow-hidden z-10">
-        <video className="size-full" autoPlay loop controls muted >
-          <source src="/videos/hero.mp4" type="video/mp4"/>
+        <video className="size-full" autoPlay loop  muted src="/videos/hero.mp4">
         </video>
       </div>
     </Section>
