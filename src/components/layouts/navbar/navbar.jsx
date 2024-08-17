@@ -15,9 +15,10 @@ export default function Navbar() {
     <div className={cn("p-0 container w-full bg-background md:border-0", (isNavbarOpen && "border-b"))}>
       <nav className="px-[5%] py-2 w-full h-full flex-between">
 
-        <Link className="w-fit flex-center" href="/">
-          <Ilogo className="size-16 text-primary" />
-          <span className='sr-only'>webdevsalmann</span>
+        <Link className="w-fit flex-center gap-xs text-primary" href="/">
+          <Ilogo className="size-12 sm:size-16" />
+          <div className='text-xl sm:text-2xl font-bold'>Meal Copilot</div>
+          <span className='sr-only'>MealCopilot</span>
         </Link>
 
 

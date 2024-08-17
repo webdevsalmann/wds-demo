@@ -44,11 +44,17 @@ export default function Technology() {
             </FadeUp>
 
             <div className="mt-block grid gap-base sm:grid-cols-2 md:grid-cols-4    ">
-                {technologyFeatures.map(item => (
-                    <div className="p-base" key={item.title + "TechFeature"}>
-                        <div className="font-bold">{item.title}</div>
-                        <p className="">{item.description}</p>
-                    </div>
+                {technologyFeatures.map((item, i) => (
+                    <FadeUp
+                        transition={{
+                            type: "spring",
+                            delay: 0.3 * i
+                        }} key={item.title + "TechFeature"}>
+                        <div className="p-base">
+                            <div className="font-bold">{item.title}</div>
+                            <p className="">{item.description}</p>
+                        </div>
+                    </FadeUp>
                 ))}
             </div>
         </Section>

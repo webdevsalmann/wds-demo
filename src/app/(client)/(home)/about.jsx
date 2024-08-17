@@ -20,7 +20,7 @@ const points = [
 export default function About() {
     return (
         <Section
-        sectionClassName="bg-gradient-to-t from-primary/10 to-transparent"
+        sectionClassName="bg-gradient-to-t from-primary/20 to-transparent"
          className="grid gap-block md:grid-cols-2" id="about">
             <div className="grid gap-base grid-cols-2">
                 {[1, 2, 3, 4].map((item,i) => (

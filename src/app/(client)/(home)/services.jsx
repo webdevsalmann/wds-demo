@@ -24,7 +24,7 @@ const services = [
 export default function Services() {
     return (
         <Section
-            sectionClassName="bg-gradient-to-b from-primary/10 to-transparent"
+            sectionClassName="bg-gradient-to-b from-primary/20 to-transparent"
              id="services"
         >
 

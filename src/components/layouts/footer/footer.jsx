@@ -10,8 +10,12 @@ export default function Footer() {
       <Section sectionClassName="bg-secondary">
         <div className="grid gap-3xl sm:grid-cols-2 md:grid-cols-3">
           <div className="">
-            <Ilogo className="size-10 mb-xs" />
-            <p className="sm:w-3/4">
+            <Link className="w-fit flex-center gap-xs text-primary" href="/">
+              <Ilogo className="size-12" />
+              <div className='text-xl sm:text-2xl font-bold'>Meal Copilot</div>
+              <span className='sr-only'>MealCopilot</span>
+            </Link>
+            <p className="mt-xs sm:w-3/4">
               Experience the future of food delivery with our state-of-the-art drone service.
             </p>
           </div>
