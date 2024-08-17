@@ -1,6 +1,6 @@
 import FadeUp from "@/components/animations/FadeUp";
 import Section from "@/components/ui/section";
-import { CigaretteOff, Map, MapPin, PackageCheck, SlidersVertical, Thermometer, Video, Zap } from "lucide-react";
+import { CigaretteOff, Map, MapPin, Package, PackageCheck, SlidersVertical, Thermometer, Video, Zap } from "lucide-react";
 import Image from "next/image";
 
 const featurePoints = [
@@ -17,8 +17,8 @@ const featurePoints = [
     title: "Precision Navigation",
   },
   {
-    icon: <Video className="size-6 group-hover:text-primary shrink-0" />,
-    title: "Easy Reordering",
+    icon: <Package className="size-6 group-hover:text-primary shrink-0" />,
+    title: "Safe Delivery",
   },
   {
     icon: <CigaretteOff className="size-6 group-hover:text-primary shrink-0" />,

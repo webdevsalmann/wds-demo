@@ -10,10 +10,9 @@ import Link from "next/link";
 
 const points = [
     "Fast Delivery",
-    "Real Time Tracking",
-    "HD Video Recording",
-    "Cost Efficient",
     "Safe Delivery",
+    "Real Time Tracking",
+    "Cost Efficient",
     "Eco-friendly",
 ]
 

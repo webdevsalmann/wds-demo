@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="">
             <Link className="w-fit flex-center gap-xs text-primary" href="/">
               <Ilogo className="size-12" />
-              <div className='text-xl sm:text-2xl font-bold'>Meal Copilot</div>
+              <div className='text-xl sm:text-2xl font-bold'>MealCopilot</div>
               <span className='sr-only'>MealCopilot</span>
             </Link>
             <p className="mt-xs sm:w-3/4">

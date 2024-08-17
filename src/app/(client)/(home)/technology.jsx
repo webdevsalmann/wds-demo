@@ -40,7 +40,7 @@ export default function Technology() {
     return (
         <Section>
             <FadeUp>
-                <h2>Technology of our<span className="text-primary"> Advanced Autonomous Drones</span></h2>
+                <h2>Technology of our Advanced<span className="text-primary"> Autonomous Drones</span></h2>
             </FadeUp>
 
             <div className="mt-block grid gap-base sm:grid-cols-2 md:grid-cols-4    ">

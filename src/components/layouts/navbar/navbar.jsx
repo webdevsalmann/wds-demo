@@ -17,7 +17,7 @@ export default function Navbar() {
 
         <Link className="w-fit flex-center gap-xs text-primary" href="/">
           <Ilogo className="size-12 sm:size-16" />
-          <div className='text-xl sm:text-2xl font-bold'>Meal Copilot</div>
+          <div className='text-xl sm:text-2xl font-bold'>MealCopilot</div>
           <span className='sr-only'>MealCopilot</span>
         </Link>
 
