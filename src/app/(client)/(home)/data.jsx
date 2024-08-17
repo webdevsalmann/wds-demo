@@ -102,7 +102,7 @@ export default function Data() {
                     {tractionData.map(item => (
                         <div className="p-base" key={item.title + "TractionMetric"}>
                             <div className="font-bold text-3xl md:text-5xl">
-                                <Counter value={item.value} /> <span>+</span>
+                                <Counter value={Number(item.value)} /> <span>+</span>
                             </div>
                             <div className="mt-base font-medium text-sm md:text-base">{item.title}</div>
                         </div>
