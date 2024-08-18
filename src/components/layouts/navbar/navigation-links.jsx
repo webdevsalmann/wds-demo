@@ -5,29 +5,24 @@ import { cn } from "@/lib/utils";
 
 export const navigationLinks = [
     {
-        title: "Home",
-        path: "/",
-        varient: "ghost"
-    },
-    {
-        title: "About",
-        path: "/about",
-        varient: "ghost"
-    },
-    {
-        title: "Services",
-        path: "/services",
-        varient: "ghost"
-    },
-    {
         title: "Products",
         path: "/products",
+        varient: "ghost"
+    },
+    {
+        title: "Careers",
+        path: "/careers",
         varient: "ghost"
     },
     {
         title: "Contact Us",
         path: "/contact",
         varient: "ghost"
+    },
+    {
+        title: "Request Demo",
+        path: "/#waitlist",
+        varient: ""
     }
 ]
 

@@ -9,7 +9,7 @@ const featurePoints = [
     title: "Lightning-Speed Service",
   },
   {
-    icon: <MapPin className="size-6 group-hover:text-primary shrink-0" />,
+    icon: <Video className="size-6 group-hover:text-primary shrink-0" />,
     title: "Real-Time Tracking",
   },
   {
@@ -17,7 +17,7 @@ const featurePoints = [
     title: "Precision Navigation",
   },
   {
-    icon: <Package className="size-6 group-hover:text-primary shrink-0" />,
+    icon: <PackageCheck className="size-6 group-hover:text-primary shrink-0" />,
     title: "Safe Delivery",
   },
   {
@@ -33,7 +33,7 @@ const featurePoints = [
     title: "Temperature-Controlled Compartments",
   },
   {
-    icon: <PackageCheck className="size-6 group-hover:text-primary shrink-0" />,
+    icon: <MapPin className="size-6 group-hover:text-primary shrink-0" />,
     title: "Flexible Delivery Options"
   },
 ]
@@ -49,10 +49,10 @@ export default function Features() {
         </div>
         <div>
           <FadeUp>
-            <p>Precise and Safe Delivery with <span className="text-primary">ML</span>(Machine learning)</p>
+            <p>Experience the future of food delivery with our ultra-fast drones, designed to bring your meals to you in record time. Say goodbye to long waits and hello to a seamless, swift service that gets your food to your door in minutes.</p>
           </FadeUp>
           <FadeUp>
-            <p className="mt-base">We have both peripheral sensors and ML Models for precise localization and automatic object avoidance.</p>
+            <p className="mt-base">Our advanced technology ensures that your food arrives fresh and perfectly preserved, with minimal handling and maximum precision. From real-time tracking to temperature-controlled compartments, every detail is optimized for your satisfaction.</p>
           </FadeUp>
         </div>
       </div>

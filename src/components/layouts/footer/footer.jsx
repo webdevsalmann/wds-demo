@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Ilogo } from "@/components/ui/svgs";
 import Section from "@/components/ui/section";
+import { siteConfig } from "@/lib/datas/metadatas";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -37,26 +38,26 @@ export default function Footer() {
                 <Link className="hover:underline w-fit text-link" href="/#services" >Services</Link>
               </li>
               <li>
-                <Link className="hover:underline w-fit text-link" href="/#request-demo" >Request Demo</Link>
+                <Link className="hover:underline w-fit text-link" href="/#waitlist" >Waitlist</Link>
               </li>
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* More Info */}
           <div className="">
-            <div className="mb-base font-bold">Legal</div>
+            <div className="mb-base font-bold">More Info</div>
             <ul>
               <li>
-                <Link className="hover:underline w-fit text-link" href="/" >Privacy Policy</Link>
+                <Link className="hover:underline w-fit text-link" href="/products" >Products</Link>
               </li>
               <li>
-                <Link className="hover:underline w-fit text-link" href="/" >Terms of condition</Link>
+                <Link className="hover:underline w-fit text-link" href="/careers" >Careers</Link>
               </li>
               <li>
-                <Link className="hover:underline w-fit text-link" href="/" >Cookie Condition</Link>
+                <Link className="hover:underline w-fit text-link" href="/contact" >Contact</Link>
               </li>
             </ul>
-            <div className="mt-base">&copy; {currentYear} Company</div>
+            <div className="mt-base">&copy; {currentYear} {siteConfig.name}</div>
           </div>
         </div>
       </Section>

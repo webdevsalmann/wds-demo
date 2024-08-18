@@ -2,6 +2,7 @@ import Counter from "@/components/animations/counter";
 import FadeUp from "@/components/animations/FadeUp";
 import TypeAnimation from "@/components/animations/type-animation";
 import Section from "@/components/ui/section";
+import { BadgeInfo } from "lucide-react";
 import Image from "next/image";
 
 const droneMetrics = [
@@ -85,16 +86,18 @@ export default function Data() {
                     height={200}
                     alt="Map Image"
                 /> */}
-                <iframe className="w-full aspect-video" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37407.105294102104!2d-119.43533227723995!3d36.561295455088846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8094e2774bc711d3%3A0xd822142ce76466e!2sIvory%2C%20CA%2093654%2C%20USA!5e0!3m2!1sen!2sin!4v1723930717874!5m2!1sen!2sin" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                <iframe className="w-full aspect-video" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212471.724084286!2d-117.93820209022724!3d33.68641235000109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcdd0e689140e3%3A0xa77ab575604a9a39!2sIrvine%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1723954699321!5m2!1sen!2sin" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
-            <div className="my-block mx-auto px-xs py-1 bg-primary text-primary-foreground rounded-md">
+            <div className="my-base mx-auto px-xs py-1 bg-primary text-primary-foreground rounded-md">
                 <marquee behavior="" direction="">
                     Current Delivery Areas~ Several cities in Orange County, CA (e.g., Irvine, Aliso Viejo, Newport Beach, Santa Ana, Great Park)
                 </marquee>
-                {/* <TypeAnimation
-                    text="Current Delivery Areas~ Several cities in Orange County, CA (e.g., Irvine, Aliso Viejo, Newport Beach, Santa Ana, Great Park)"
-                /> */}
+            </div>
+
+            <div className="mx-auto my-base px-xs py-1 w-fit text-center bg-yellow-200 text-yellow-800 flex items-center rounded-md">
+                <BadgeInfo className="inline-block size-lg mr-2 shrink-0" />
+                Now we provide delivery service for Beta Users in Irvine, CA, and nearby areas!
             </div>
 
             <div className="p-base md:py-block bg-foreground text-background rounded-xl">
@@ -102,7 +105,7 @@ export default function Data() {
                     {tractionData.map(item => (
                         <div className="p-base" key={item.title + "TractionMetric"}>
                             <div className="font-bold text-3xl md:text-5xl">
-                                <Counter value={Number(item.value)} /> <span>+</span>
+                                <Counter value={Number(item.value)} /><span>+</span>
                             </div>
                             <div className="mt-base font-medium text-sm md:text-base">{item.title}</div>
                         </div>

@@ -1,7 +1,7 @@
 
 export const siteConfig = {
-    name: "Site Name",
-    title: "Site Title",
+    name: "MealCopilot",
+    title: "MealCopilot",
     description: "Site Description",
     url: "https://google.com",
     baseUrl: "https://google.com",
