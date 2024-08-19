@@ -94,7 +94,7 @@ export default function Data() {
                 <iframe className="w-full aspect-video" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212471.724084286!2d-117.93820209022724!3d33.68641235000109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcdd0e689140e3%3A0xa77ab575604a9a39!2sIrvine%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1723954699321!5m2!1sen!2sin" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
-            <div className="my-base mx-auto px-xs py-1 bg-primary text-primary-foreground rounded-md">
+            <div className="my-base mx-auto px-xs py-1 bg-primary text-primary-foreground rounded-md flex-center">
                 <marquee behavior="" direction="">
                     Current Delivery Areas~ Several cities in Orange County, CA (e.g., Irvine, Aliso Viejo, Newport Beach, Santa Ana, Great Park)
                 </marquee>

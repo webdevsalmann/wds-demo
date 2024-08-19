@@ -8,7 +8,7 @@ const initialFmaosConfig = {
     },
     viewport: {
         once: true,
-        amount: "all",
+        amount: 0.1,
     },
 };
 

@@ -14,7 +14,7 @@ const WavyText = ({
     hidden: {
       opacity: 0
     },
-    visible: (i= 1) => ({
+    visible: (i = 1) => ({
       opacity: 1,
       transition: { staggerChildren: duration, delayChildren: i * delay }
     })
@@ -33,7 +33,7 @@ const WavyText = ({
 
   return (
     <motion.span
-    className="flex flex-wrap overflow-hidden"
+      className="flex flex-wrap overflow-hidden"
       variants={container}
       initial="hidden"
       whileInView="visible"
