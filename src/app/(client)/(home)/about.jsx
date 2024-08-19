@@ -69,7 +69,7 @@ export default function About() {
                         ))}
                     </div>
                     <ZoomIn>
-                        <Link className={cn(buttonVariants(),"mt-lg")} href="/#request-demo">Request A Demo</Link>
+                        <Link className={cn(buttonVariants(),"mt-lg")} href="/#waitlist">Request A Demo</Link>
                     </ZoomIn>
                 </div>
             </div>

@@ -29,6 +29,9 @@ export default function Footer() {
                 <Link className="hover:underline w-fit text-link" href="/#features" >Features</Link>
               </li>
               <li>
+                <Link className="hover:underline w-fit text-link" href="/#technology" >Technology</Link>
+              </li>
+              <li>
                 <Link className="hover:underline w-fit text-link" href="/#about" >About</Link>
               </li>
               <li>

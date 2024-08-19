@@ -1,252 +1,169 @@
 "use client"
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { LoaderCircle } from "lucide-react";
+import { Controller, useForm } from "react-hook-form";
+import { z } from "zod";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "@/components/ui/use-toast";
-import { LoaderCircle, Send } from "lucide-react";
+import FormInput from "@/components/ui/form/form-input";
+import FormSelect from "@/components/ui/form/form-select";
+import { formatData } from "@/lib/utils";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const formSchema = z.object({
+    "727782606": z.string().min(1, "First Name is required")
+        .regex(/^[A-Za-z\s]+$/, "First Name should only contain letters"),
+    "469037222": z.string().min(1, "Last Name is required")
+        .regex(/^[A-Za-z\s]+$/, "Last Name should only contain letters"),
+    "233219632": z.string().min(1, "Email is required").email("Email format is not valid"),
+    "303251615": z.optional(z.string().regex(/^\+?[1-9]\d{1,14}$/, "Invalid phone number format")),
+    "473713592": z.string().optional(),
+    "1494750270": z.string().min(1, "Please select message type"),
+    "659131164": z.string().optional(),
+},)
 
 export default function ContactForm() {
-    const initialFormValue = {
-        "entry.727782606": "",
-        "entry.469037222": "",
-        "entry.1344868066": "",
-        "entry.473713592": "",
-        "entry.1494750270": "",
-        "entry.233219632": "",
-        "entry.303251615": "",
-        "entry.659131164": "",
-    }
-    const [loading, setLoading] = useState(false);
-    const [isSubmitted, setIsSubmitted] = useState(false);
-    const [error, setError] = useState("");
-    const [formData, setFormData] = useState(initialFormValue);
+    const [submitted, setSubmitted] = useState(false);
+    const form = useForm({
+        mode: "onTouched",
+        resolver: zodResolver(formSchema)
+    });
+    const { register, control, handleSubmit, formState, reset } = form;
+    const { errors, isDirty, isValid, isSubmitting, isSubmitSuccessful } = formState;
 
-    const handleInputChange = (e) => {
-        const { name, value, type, checked } = e.target;
-        setFormData({
-            ...formData,
-            [name]: type === "checkbox" ? checked : value,
-        });
-    };
-
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        setLoading(true);
-        setIsSubmitted(false);
-        setError("");
-
-        const formattedData = new FormData();
-        Object.entries(formData).forEach(([key, value]) => {
-            formattedData.append(key, value);
-        });
-
-        setFormData(initialFormValue)
-        console.log("Formatted Data:", formattedData);
-
+    const onSubmit = async (data) => {
         try {
-            const response = await fetch("https://docs.google.com/forms/d/e/1FAIpQLSfe_FOJf-yR6OfyMwenoBryjCjyxHH0PyThsPWED4cgMbIM4g/formResponse", {
+            await fetch("https://docs.google.com/forms/d/e/1FAIpQLSfe_FOJf-yR6OfyMwenoBryjCjyxHH0PyThsPWED4cgMbIM4g/formResponse", {
                 method: "POST",
-                body: formattedData,
+                body: await formatData(data),
                 mode: "no-cors",
             });
 
-            setIsSubmitted(true);
             toast({
                 title: "🙂Thank you for reaching out to us.",
-                description: "We'll be in touch soon!",
+                description: <div>
+                    We&apos;ll be in touch soon!, At the meantime, checkout our <Link className="underline underline-offset-2 hover:text-primary" href="/products"> product page </Link> for more info.
+                </div>,
+                duration: 15000
             });
+
+            setSubmitted(true)
         } catch (err) {
-            setError("Something went wrong, please try again later.");
-            setIsSubmitted(false);
             console.error("Error~", err)
             toast({
                 variant: "destructive",
                 title: "Error",
                 description: "We couldn't process your request. Please try again later.",
             });
-        } finally {
-            setLoading(false);
         }
     };
 
+    useEffect(() => { if (isSubmitSuccessful) { reset() } }, [isSubmitSuccessful, reset])
+
     return (
         <div className="p-base bg-secondary rounded-md overflow-hidden">
-            <form className="space-y-lg" onSubmit={handleSubmit}>
-                {/* First & Last Name */}
-                <div className="grid gap-base sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
-                    <div className="space-y-2">
-                        <Label htmlFor="entry.727782606">
-                            First Name <span className="text-destructive">*</span>
-                        </Label>
-                        <Input
-                            type="text"
-                            placeholder="John"
-                            name="entry.727782606"
-                            id="entry.727782606"
-                            value={formData["entry.727782606"]}
-                            onChange={handleInputChange}
-                            required
-                        />
-                    </div>
+            <form className="space-y-lg" onSubmit={handleSubmit(onSubmit)} noValidate>
 
-                    <div className="space-y-2">
-                        <Label htmlFor="entry.469037222">
-                            Last Name <span className="text-destructive">*</span>
-                        </Label>
-                        <Input
-                            type="text"
-                            placeholder="Doe"
-                            name="entry.469037222"
-                            id="entry.469037222"
-                            value={formData["entry.469037222"]}
-                            onChange={handleInputChange}
-                            required
-                        />
-                    </div>
-                </div>
 
-                {/* Title, Preferred Method, Message For */}
-                <div className="grid gap-base sm:grid-cols-3 md:grid-cols-1 lg:grid-cols-3">
-                    <div className="space-y-2">
-                        <Label htmlFor="entry.1344868066">Title</Label>
-                        <Select
-                            value={formData["entry.1344868066"]}
-                            onValueChange={(value) =>
-                                setFormData({ ...formData, ["entry.1344868066"]: value })
-                            }
-                            name="entry.1344868066"
-                            id="entry.1344868066"
-                        >
-                            <SelectTrigger>
-                                <SelectValue placeholder="Select" />
-                            </SelectTrigger>
-                            <SelectContent>
-                                <SelectItem value="Mr">Mr.</SelectItem>
-                                <SelectItem value="Mrs">Mrs.</SelectItem>
-                                <SelectItem value="Miss">Miss</SelectItem>
-                            </SelectContent>
-                        </Select>
-                    </div>
-
-                    <div className="space-y-2">
-                        <Label htmlFor="entry.473713592">Preferred Contact</Label>
-                        <Select
-                            value={formData["entry.473713592"]}
-                            onValueChange={(value) =>
-                                setFormData({ ...formData, ["entry.473713592"]: value })
-                            }
-                            name="entry.473713592"
-                            id="entry.473713592"
-                        >
-                            <SelectTrigger>
-                                <SelectValue placeholder="Select" />
-                            </SelectTrigger>
-                            <SelectContent>
-                                <SelectItem value="Email">Email</SelectItem>
-                                <SelectItem value="Phone">Phone</SelectItem>
-                            </SelectContent>
-                        </Select>
-                    </div>
-
-                    <div className="space-y-2">
-                        <Label htmlFor="entry.1494750270">
-                            Message Type <span className="text-destructive">*</span>
-                        </Label>
-                        <Select
-                            value={formData["entry.1494750270"]}
-                            onValueChange={(value) =>
-                                setFormData({ ...formData, ["entry.1494750270"]: value })
-                            }
-                            name="entry.1494750270"
-                            id="entry.1494750270"
-                            required
-                        >
-                            <SelectTrigger>
-                                <SelectValue placeholder="Select" />
-                            </SelectTrigger>
-                            <SelectContent>
-                                <SelectItem value="Business">Business</SelectItem>
-                                <SelectItem value="Conference">Conference</SelectItem>
-                                <SelectItem value="Question">Question</SelectItem>
-                                <SelectItem value="Suggestion">Suggestion</SelectItem>
-                                <SelectItem value="Other">Other</SelectItem>
-                            </SelectContent>
-                        </Select>
-                    </div>
-                </div>
-
-                {/* Email & Phone */}
-                <div className="grid gap-base sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
-                    <div className="space-y-2">
-                        <Label htmlFor="entry.233219632">
-                            Email <span className="text-destructive">*</span>
-                        </Label>
-                        <Input
-                            type="email"
-                            placeholder="mail@address.com"
-                            name="entry.233219632"
-                            id="entry.233219632"
-                            value={formData["entry.233219632"]}
-                            onChange={handleInputChange}
-                            required
-                        />
-                    </div>
-
-                    <div className="space-y-2">
-                        <Label htmlFor="entry.303251615">Phone</Label>
-                        <Input
-                            type="tel"
-                            placeholder="+1 (123) 456-7890"
-                            name="entry.303251615"
-                            id="entry.303251615"
-                            value={formData["entry.303251615"]}
-                            onChange={handleInputChange}
-                        />
-                    </div>
-                </div>
-
-                {/* Message */}
-                <div className="space-y-2">
-                    <Label htmlFor="entry.659131164">
-                        Message <span className="text-destructive">*</span>
-                    </Label>
-                    <Textarea
-                        className="w-full"
-                        placeholder="Type your Message"
-                        name="entry.659131164"
-                        id="entry.659131164"
-                        value={formData["entry.659131164"]}
-                        onChange={handleInputChange}
+                {/* First Name & Last Name */}
+                <div className="form-group">
+                    <FormInput
                         required
+                        placeholder="John"
+                        label="First Name"
+                        id="727782606"
+                        {...register("727782606")}
+                        error={errors["727782606"]?.message}
+                    />
+                    <FormInput
+                        required
+                        placeholder="Doe"
+                        label="Last Name"
+                        id="469037222"
+                        {...register("469037222")}
+                        error={errors["469037222"]?.message}
                     />
                 </div>
 
-                <div className="text-xs">On clicking on &quot;Send&quot; you are agreeing to our privacy-policy.</div>
+                {/* Email & Phone */}
+                <div className="form-group">
+                    {/* Email */}
+                    <FormInput
+                        required
+                        placeholder="mail@address.com"
+                        label="Email"
+                        type="email"
+                        id="233219632"
+                        {...register("233219632")}
+                        error={errors["233219632"]?.message}
+                    />
+
+                    {/* Phone */}
+                    <FormInput
+                        required
+                        placeholder="+1 (123) 456-7890"
+                        label="Phone"
+                        type="tel"
+                        id="303251615"
+                        {...register("303251615")}
+                        error={errors["303251615"]?.message}
+                    />
+                </div>
+
+
+                {/* Preferred Method & Message Type */}
+                <div className="form-group">
+                    {/* Preferred Contact */}
+                    <Controller
+                        name="473713592"
+                        control={control}
+                        render={({ field }) => (
+                            <FormSelect
+                                label="Preferred Contact Method"
+                                id="473713592"
+                                items={["Email", "Phone"]}
+                                value={field.value}
+                                onValueChange={field.onChange}
+                                error={errors["473713592"]?.message}
+                            />
+                        )}
+                    />
+
+                    {/* Message Type */}
+                    <Controller
+                        name="1494750270"
+                        control={control}
+                        render={({ field }) => (
+                            <FormSelect
+                                label="Message Type"
+                                id="1494750270"
+                                items={["Business", "Conference", "Question", "Suggestion", "Other"]}
+                                value={field.value}
+                                onValueChange={field.onChange}
+                                error={errors["1494750270"]?.message}
+                                required
+                            />
+                        )}
+                    />
+                </div>
+
+
+                {/* Message */}
+                <FormInput
+                    textarea
+                    placeholder="Leave a Message (Optional)"
+                    label="Message"
+                    id="659131164"
+                    {...register("659131164")}
+                    error={errors["659131164"]?.message}
+                />
 
                 {/* Submit Button */}
                 <div className="flex-center md:block">
-                    <Button type="submit" disabled={loading || isSubmitted}>
-                        {loading ? (
-                            <>
-                                <LoaderCircle className="mr-xs size-base animate-spin" />
-                                <span>Sending</span>
-                            </>
-                        ) : (
-                            <>
-                                <Send className="mr-xs size-base" />
-                                <span>Send{isSubmitted && "ed"}</span>
-                            </>
-                        )}
+                    <Button className="flex items-center capitalize" type="submit" disabled={!isDirty || !isValid || isSubmitting || isSubmitSuccessful}>
+                        {isSubmitting && <LoaderCircle className="mr-xs size-base animate-spin" />}
+                        Submit{submitted ? "ed" : (isSubmitting && "ing")}
                     </Button>
                 </div>
             </form>

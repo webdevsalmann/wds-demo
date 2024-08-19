@@ -12,7 +12,7 @@ export default function page() {
       </div>
       <Section>
         <div className="grid gap-lg sm:grid-cols-2 md:grid-cols-3">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(item => (
+          {[1, 2, 3].map(item => (
             <FadeUp className="rounded-md overflow-hidden hover:shadow-lg transition-all" key={item}>
               <Link href={`/products/${item}`}>
                 <div className="">

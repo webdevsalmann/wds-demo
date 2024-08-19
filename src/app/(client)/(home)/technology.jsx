@@ -38,7 +38,7 @@ const technologyFeatures = [
 
 export default function Technology() {
     return (
-        <Section>
+        <Section id="technology">
             <FadeUp>
                 <h2>Technology of our Advanced<span className="text-primary"> Autonomous Drones</span></h2>
             </FadeUp>
