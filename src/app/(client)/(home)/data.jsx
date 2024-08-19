@@ -1,9 +1,12 @@
+"use client"
 import Counter from "@/components/animations/counter";
 import FadeUp from "@/components/animations/FadeUp";
 import TypeAnimation from "@/components/animations/type-animation";
+import useWaitlist from "@/components/providers/waitlist-provider";
 import Section from "@/components/ui/section";
 import { BadgeInfo } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 
 const droneMetrics = [
     {
@@ -57,6 +60,8 @@ const waitlistdata = [
 
 
 export default function Data() {
+    const { totalUser } = useWaitlist();
+
     return (
         <Section>
             <div className="md:mx-auto w-full md:w-2/3 md:text-center ">
@@ -115,14 +120,19 @@ export default function Data() {
                 <div className="mt-block mb-base text-yellow-200 font-bold text-2xl text-center">Waitlisted</div>
 
                 <div className="md:mx-auto w-full md:w-fit  grid gap-base md:grid-cols-2 ">
-                    {waitlistdata.map(item => (
-                        <div className="p-base md:aspect-video bg-yellow-200 text-foreground rounded-md text-center" key={item.title + "Waitlist"}>
-                            <div className="font-bold text-3xl md:text-5xl">
-                                <Counter value={item.value} />
-                            </div>
-                            <div className="font-medium uppercase">{item.title}</div>
+                    <div className="p-base md:aspect-video bg-yellow-200 text-foreground rounded-md text-center" >
+                        <div className="font-bold text-3xl md:text-5xl">
+                            <Counter value={223} />
                         </div>
-                    ))}
+                        <div className="font-medium uppercase">Restaurants</div>
+                    </div>
+
+                    <div className="p-base md:aspect-video bg-yellow-200 text-foreground rounded-md text-center">
+                        <div className="font-bold text-3xl md:text-5xl">
+                            <Counter value={totalUser} />
+                        </div>
+                        <div className="font-medium uppercase">Users</div>
+                    </div>
                 </div>
             </div>
         </Section>

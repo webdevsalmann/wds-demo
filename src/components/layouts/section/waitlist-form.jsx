@@ -14,8 +14,10 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { LoaderCircle, Send } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
+import useWaitlist from "@/components/providers/waitlist-provider";
 
 export default function WaitlistForm() {
+    const { getSubmissionCount } = useWaitlist();
     const [loading, setLoading] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [error, setError] = useState("");
@@ -66,6 +68,9 @@ export default function WaitlistForm() {
                 title: "🎉 You're on the Waitlist!",
                 description: "Thank you for applying. We'll be in touch soon!",
             });
+            setTimeout(() => {
+                getSubmissionCount()
+            }, 3000);
         } catch (err) {
             setError("Something went wrong, please try again later.");
             setIsSubmitted(false);

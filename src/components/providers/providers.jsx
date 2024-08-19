@@ -2,6 +2,7 @@
 import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from "@/components/providers/ThemeProvider"
 import { FmaosConfigProvider } from "./FmaosConfigProvider"
+import { WaitlistProvider } from "./waitlist-provider"
 
 export default function Providers({ children }) {
     return (
@@ -12,7 +13,9 @@ export default function Providers({ children }) {
             enableSystem
             disableTransitionOnChange> */}
             <FmaosConfigProvider>
-                {children}
+                <WaitlistProvider>
+                    {children}
+                </WaitlistProvider>
             </FmaosConfigProvider>
             <Toaster />
             {/* </ThemeProvider> */}
