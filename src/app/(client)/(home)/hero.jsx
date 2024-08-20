@@ -31,7 +31,14 @@ export default function Hero() {
         {/* <div className="absolute inset-0 bg-neutral-900/40 flex-center text-center z-10">
           <h2 className="mx-auto md:w-1/2 text-background">Fresh Food Delivered by Drone in Minutes!</h2>
         </div> */}
-        <video className="relative size-full z-0" autoPlay loop muted src="/videos/hero.mp4"/>
+        <iframe
+          className="relative size-full z-0"
+          src="https://www.youtube.com/embed/Xqnatv8-unU?autoplay=1&mute=&loop=1&disablekb=1&controls=0&playlist=Xqnatv8-unU&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=1"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
+        {/* <video className="relative size-full z-0" autoPlay loop muted src="/videos/hero.mp4" /> */}
       </div>
     </Section>
   )

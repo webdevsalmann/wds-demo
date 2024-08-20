@@ -22,9 +22,9 @@ export default function page() {
                         <h2 className="h3">Place your order on our web app </h2>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur est ipsam repudiandae earum magni corrupti ex, molestias facere minima facilis, similique quas placeat autem atque esse. Ex aspernatur accusamus optio.</p>
                     </div>
-                    <div className="aspect-video h-full order-1 md:order-2">
+                    <div className="flex-center order-1 md:order-2">
                         <iframe
-                            className="size-full pointer-events-none"
+                            className="w-full aspect-video pointer-events-none rounded-md"
                             src="https://www.youtube.com/embed/Xqnatv8-unU?autoplay=1&mute=&loop=1&disablekb=1&controls=0&playlist=Xqnatv8-unU&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=1"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerPolicy="strict-origin-when-cross-origin"
@@ -43,13 +43,13 @@ export default function page() {
                 </div>
 
                 <div className="bg-secondary grid md:grid-cols-2 rounded md:rounded-md overflow-hidden">
-                    <div className="p-base order-1 md:order-2">
+                    <div className="p-base order-2">
                         <h2 className="h3">Pick up your order by our drones</h2>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur est ipsam repudiandae earum magni corrupti ex, molestias facere minima facilis, similique quas placeat autem atque esse. Ex aspernatur accusamus optio.</p>
                     </div>
-                    <div className="aspect-video h-full order-2 md:order-1">
+                    <div className="flex-center order-1">
                         <iframe
-                            className="size-full pointer-events-none"
+                            className="w-full aspect-video pointer-events-none rounded-md"
                             src="https://www.youtube.com/embed/Xqnatv8-unU?autoplay=1&mute=&loop=1&disablekb=1&controls=0&playlist=Xqnatv8-unU&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=1"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerPolicy="strict-origin-when-cross-origin"
@@ -72,9 +72,9 @@ export default function page() {
                         <h2 className="h3">Deliver to your address in minutes</h2>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur est ipsam repudiandae earum magni corrupti ex, molestias facere minima facilis, similique quas placeat autem atque esse. Ex aspernatur accusamus optio.</p>
                     </div>
-                    <div className="aspect-video h-full order-1 md:order-2">
+                    <div className="flex-center order-1 md:order-2">
                         <iframe
-                            className="size-full pointer-events-none"
+                            className="w-full aspect-video pointer-events-none rounded-md"
                             src="https://www.youtube.com/embed/Xqnatv8-unU?autoplay=1&mute=&loop=1&disablekb=1&controls=0&playlist=Xqnatv8-unU&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=1"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerPolicy="strict-origin-when-cross-origin"
