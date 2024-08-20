@@ -5,8 +5,13 @@ import { cn } from "@/lib/utils";
 
 export const navigationLinks = [
     {
-        title: "Products",
-        path: "/products",
+        title: "How It Works",
+        path: "/how-it-works",
+        varient: "ghost"
+    },
+    {
+        title: "Working",
+        path: "/working",
         varient: "ghost"
     },
     {

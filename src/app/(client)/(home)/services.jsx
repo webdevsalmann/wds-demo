@@ -3,20 +3,20 @@ import Section from "@/components/ui/section";
 import Image from "next/image";
 const services = [
     {
-        title: "Lightning-Speed Service",
-        description: "Experience the quickest food delivery ever with our cutting-edge drones. Enjoy your meal in minutes, no matter the traffic conditions."
+        title: "Food Delivery",
+        description: "We aim for the fastest food delivery by drones, in minutes, at lower cost."
     },
     {
-        title: "Real-Time Tracking",
-        description: "Track your order in real-time with our advanced GPS technology. Know exactly when your food will arrive, down to the second."
+        title: "Convenience Delivery",
+        description: "From convenience store to your address, with much less time."
     },
     {
-        title: "State-of-the-Art Technology",
-        description: "Our drones are equipped with the latest technology to ensure safe and reliable delivery every time."
+        title: "Grocery Delivery",
+        description: "Get your groceries delivered as fast as 15-20 mins."
     },
     {
-        title: "Precision Navigation",
-        description: "Using advanced navigation systems, our drones deliver your food with pinpoint accuracy, even in challenging weather conditions."
+        title: "Small item Delivery",
+        description: "Available for small packages for verified stores."
     }
 ];
 
@@ -30,6 +30,7 @@ export default function Services() {
 
             <FadeUp>
                 <h2><span className="text-primary">Services</span> We Provide</h2>
+                <p className="-mt-base mb-3xl">Contact us for business opportunities</p>
             </FadeUp>
 
             <div className="grid gap-base sm:grid-cols-2 md:grid-cols-4">
@@ -43,7 +44,7 @@ export default function Services() {
                         <div className="relative w-full aspect-[3/4] rounded-md overflow-hidden">
                             <Image
                                 className="absolute inset-0 size-full rounded object-center object-cover z-0"
-                                src={`/images/drones/${i + 1}.jpg`}
+                                src={`/images/common/${i + 1}.jpg`}
                                 height={200}
                                 width={200}
                                 alt="Drone Image"
@@ -52,7 +53,7 @@ export default function Services() {
                             <div className="p-base relative z-20 size-full flex flex-col">
                                 <div className="flex-1" />
                                 <div className=" font-semibold leading-5 text-background">{item.title}</div>
-                                <p className="text-xs line-clamp-2 text-background/60">{item.description}</p>
+                                <p className="text-xs line-clamp-3 text-background/60">{item.description}</p>
                             </div>
                         </div>
                     </FadeUp>

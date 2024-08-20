@@ -27,9 +27,11 @@ export default function Hero() {
       </div>
 
 
-      <div className="mt-block relative aspect-video bg-[url('/images/common/hero.png')] bg-cover bg-center rounded-xl overflow-hidden z-10">
-        <video className="size-full" autoPlay loop  muted src="/videos/hero.mp4">
-        </video>
+      <div className="relative mt-block aspect-video bg-[url('/images/common/hero.png')] bg-cover bg-center rounded-md md:rounded-xl overflow-hidden z-10">
+        {/* <div className="absolute inset-0 bg-neutral-900/40 flex-center text-center z-10">
+          <h2 className="mx-auto md:w-1/2 text-background">Fresh Food Delivered by Drone in Minutes!</h2>
+        </div> */}
+        <video className="relative size-full z-0" autoPlay loop muted src="/videos/hero.mp4"/>
       </div>
     </Section>
   )

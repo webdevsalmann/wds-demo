@@ -10,7 +10,7 @@ import { useState } from "react";
 
 const droneMetrics = [
     {
-        metric: "Fastest Delivery Completed",
+        metric: "Fastest Delivery",
         value: "<5",
         unit: "mins"
     },
@@ -20,7 +20,7 @@ const droneMetrics = [
         unit: "km/h"
     },
     {
-        metric: "Max Distance Traveled",
+        metric: "Distance Traveled",
         value: "60+",
         unit: "km"
     },
