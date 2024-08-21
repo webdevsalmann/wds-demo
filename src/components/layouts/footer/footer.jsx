@@ -48,10 +48,10 @@ export default function Footer() {
 
           {/* More Info */}
           <div className="">
-            <div className="mb-base font-bold">More Info</div>
+            <div className="mb-base font-bold">Other Pages</div>
             <ul>
               <li>
-                <Link className="hover:underline w-fit text-link" href="/products" >Products</Link>
+                <Link className="hover:underline w-fit text-link" href="/how-it-works" >How It Works</Link>
               </li>
               <li>
                 <Link className="hover:underline w-fit text-link" href="/careers" >Careers</Link>

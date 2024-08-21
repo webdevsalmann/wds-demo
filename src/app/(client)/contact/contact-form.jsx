@@ -46,7 +46,7 @@ export default function ContactForm() {
                 description: <div>
                     We&apos;ll be in touch soon!, At the meantime, checkout <Link className="underline underline-offset-2 hover:text-primary" href="/how-it-works"> how our product works </Link> for more info.
                 </div>,
-                duration: 15000
+                duration: 7000
             });
 
             setSubmitted(true)
