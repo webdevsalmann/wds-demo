@@ -10,11 +10,6 @@ export const navigationLinks = [
         varient: "ghost"
     },
     {
-        title: "Working",
-        path: "/working",
-        varient: "ghost"
-    },
-    {
         title: "Careers",
         path: "/careers",
         varient: "ghost"
@@ -31,7 +26,7 @@ export const navigationLinks = [
     }
 ]
 
-export default function NavigationLinks() {
+export default function NavigationLinks({ setIsNavbarOpen }) {
     const path = usePathname();
 
     return navigationLinks.map((item) => (
@@ -43,6 +38,7 @@ export default function NavigationLinks() {
                     buttonVariants({ variant: item.varient, size: 'sm' }),
                 )}
                 href={item.path}
+                onClick={() => setIsNavbarOpen(false)}
             >
                 {item.title}
             </Link>

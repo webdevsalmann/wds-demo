@@ -21,7 +21,8 @@ const formSchema = z.object({
     "847868758": z.string().min(1, "Last Name is required")
         .regex(/^[A-Za-z\s]+$/, "Last Name should only contain letters"),
     "1945850391": z.string().min(1, "Email is required").email("Email format is not valid"),
-    "1419066428": z.optional(z.string().regex(/^\+?[1-9]\d{1,14}$/, "Invalid phone number format")),
+    // "1419066428": z.optional(z.string().regex(/^\+?[1-9]\d{1,14}$/, "Invalid phone number format")),
+    "1419066428": z.string().optional(),
     "881683111": z.string().optional(),
     "341762229": z.string().min(1, "Please select the role"),
     "780254798": z.string().min(1, "Please mention your education"),
@@ -52,7 +53,7 @@ export default function CareersForm() {
                 title: "🎉 Your request for job application has been sent successfully!",
                 description: <div>
                     Thank you for applying. We&apos;ll get back to you shortly!,
-                    At the meantime, checkout our <Link className="underline underline-offset-2 hover:text-primary" href="/products"> product page </Link> for more info.
+                    At the meantime, checkout <Link className="underline underline-offset-2 hover:text-primary" href="/products"> how it works </Link> for more info.
                 </div>,
                 duration: 15000
             });
@@ -109,7 +110,7 @@ export default function CareersForm() {
 
                     {/* Phone */}
                     <FormInput
-                        required
+                        // required
                         placeholder="+1 (123) 456-7890"
                         label="Phone"
                         type="tel"

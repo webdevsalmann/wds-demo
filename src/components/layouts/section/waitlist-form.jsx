@@ -18,7 +18,8 @@ const formSchema = z.object({
     "1658348171": z.string().min(1, "Last Name is required")
         .regex(/^[A-Za-z\s]+$/, "Last Name should only contain letters"),
     "578847054": z.string().min(1, "Email is required").email("Email format is not valid"),
-    "1509032610": z.optional(z.string().regex(/^\+?[1-9]\d{1,14}$/, "Invalid phone number format")),
+    // "1509032610": z.optional(z.string().regex(/^\+?[1-9]\d{1,14}$/, "Invalid phone number format")),
+    "1509032610": z.string().optional(),
     "1307653429": z.string().optional(),
     "1938791065": z.string().min(1, "Booking type is required"),
     "1522262866": z.string().min(1, "Location is required"),
@@ -48,7 +49,7 @@ export default function WaitlistForm() {
                 title: "🎉 You're on the Waitlist!",
                 description: <div>
                     Thank you for applying. We&apos;ll be in touch soon!,
-                    At the meantime, checkout our <Link className="underline underline-offset-2 hover:text-primary" href="/products"> product page </Link> for more info.
+                    At the meantime, checkout <Link className="underline underline-offset-2 hover:text-primary" href="/how-it-works"> how it works </Link> for more info.
                 </div>,
                 duration: 15000
             });
@@ -108,7 +109,7 @@ export default function WaitlistForm() {
 
                     {/* Phone */}
                     <FormInput
-                        required
+                        // required
                         placeholder="+1 (123) 456-7890"
                         label="Phone"
                         type="tel"

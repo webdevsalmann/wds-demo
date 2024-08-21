@@ -27,7 +27,7 @@ export default function Navbar() {
 
         <div className={`col-span-2 justify-self-center md:justify-self-end ${isNavbarOpen ? 'block' : 'hidden md:block'}`}>
           <ul className={`relative flex-center flex-col gap-xs md:flex-row md:flex ${isNavbarOpen ? 'flex' : 'hidden'}`}>
-            <NavigationLinks />
+            <NavigationLinks setIsNavbarOpen={setIsNavbarOpen}/>
           </ul>
         </div>
 

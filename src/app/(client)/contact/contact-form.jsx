@@ -17,7 +17,8 @@ const formSchema = z.object({
     "469037222": z.string().min(1, "Last Name is required")
         .regex(/^[A-Za-z\s]+$/, "Last Name should only contain letters"),
     "233219632": z.string().min(1, "Email is required").email("Email format is not valid"),
-    "303251615": z.optional(z.string().regex(/^\+?[1-9]\d{1,14}$/, "Invalid phone number format")),
+    // "303251615": z.optional(z.string().regex(/^\+?[1-9]\d{1,14}$/, "Invalid phone number format")),
+    "303251615": z.string().optional(),
     "473713592": z.string().optional(),
     "1494750270": z.string().min(1, "Please select message type"),
     "659131164": z.string().optional(),
@@ -43,7 +44,7 @@ export default function ContactForm() {
             toast({
                 title: "🙂Thank you for reaching out to us.",
                 description: <div>
-                    We&apos;ll be in touch soon!, At the meantime, checkout our <Link className="underline underline-offset-2 hover:text-primary" href="/products"> product page </Link> for more info.
+                    We&apos;ll be in touch soon!, At the meantime, checkout <Link className="underline underline-offset-2 hover:text-primary" href="/how-it-works"> how our product works </Link> for more info.
                 </div>,
                 duration: 15000
             });
@@ -101,7 +102,7 @@ export default function ContactForm() {
 
                     {/* Phone */}
                     <FormInput
-                        required
+                        // required
                         placeholder="+1 (123) 456-7890"
                         label="Phone"
                         type="tel"

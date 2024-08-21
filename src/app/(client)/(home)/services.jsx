@@ -30,7 +30,7 @@ export default function Services() {
 
             <FadeUp>
                 <h2><span className="text-primary">Services</span> We Provide</h2>
-                <p className="-mt-base mb-3xl">Contact us for business opportunities</p>
+                <p className="-mt-base mb-3xl">Contact us for business opportunities.</p>
             </FadeUp>
 
             <div className="grid gap-base sm:grid-cols-2 md:grid-cols-4">
