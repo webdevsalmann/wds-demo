@@ -2,8 +2,6 @@ import FadeUp from "@/components/animations/FadeUp";
 import ZoomIn from "@/components/animations/ZoomIn";
 import Waitlist from "@/components/layouts/section/waitlist";
 import Section from "@/components/ui/section";
-import { ZoomOut } from "lucide-react";
-import Image from "next/image";
 
 export default function page() {
     return (
@@ -69,7 +67,7 @@ export default function page() {
                             <h2 className="h3">Pick up your order by our drones</h2>
                         </FadeUp>
                         <FadeUp>
-                            <p>After placing your order, our advanced drones take over, swiftly picking up your items from the nearest fulfillment center.</p>
+                            <p>After placing your order, our advanced drones take over, swiftly picking up your items from the restaurant / store.</p>
                         </FadeUp>
                         <br />
                         <FadeUp>
@@ -106,7 +104,7 @@ export default function page() {
                             <h2 className="h3">Deliver to your address in minutes</h2>
                         </FadeUp>
                         <FadeUp>
-                            <p>Our drones don&apos;t just fly—they deliver your order in record time, straight to your address. Enjoy the thrill of seeing your delivery arrive in just minutes.</p>
+                            <p>Our drones don&apos;t just fly - they deliver your order in record time, straight to your address. Enjoy the thrill of seeing your delivery arrive in just minutes.</p>
                         </FadeUp>
                         <br />
                         <FadeUp>

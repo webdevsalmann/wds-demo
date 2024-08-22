@@ -30,6 +30,7 @@ const formSchema = z.object({
 
 export default function WaitlistForm() {
     const [submitted, setSubmitted] = useState(false);
+    const { getSubmissionCount } = useWaitlist();
     const form = useForm({
         mode: "onTouched",
         resolver: zodResolver(formSchema)

@@ -170,7 +170,7 @@ export default function CareersForm() {
                     <FormInput
                         required
                         textarea
-                        placeholder="Describe your experience"
+                        placeholder="Describe the projects that you have done. (Optional)"
                         label="Work Experience"
                         id="1449170415"
                         {...register("1449170415")}
@@ -181,7 +181,7 @@ export default function CareersForm() {
                 {/* Linkedin / Social Media Profile */}
                 <FormInput
                     placeholder="https://linkedin.com/..."
-                    label="LinkedIn / Social Media Profile (Optional)"
+                    label="LinkedIn / Social Media Profile"
                     id="1613011424"
                     {...register("1613011424")}
                     error={errors["1613011424"]?.message}
